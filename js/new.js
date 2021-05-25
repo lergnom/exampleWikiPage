@@ -2,15 +2,27 @@
     'use strict'
     const markSourceEl = document.querySelector("#markSrc")
     const markedDstEl = document.querySelector("#markDst")
+    const saveArticBtn = document.querySelector("#save-article-button")
+    const articleTitle = document.querySelector("#article-title")
 
     markedDstEl.innerHTML = `
     <h1>Заголовок статьи</h1>
     `
 
+    let result;
 
     markSourceEl.addEventListener('keyup', function () {
-        console.log(markSourceEl.value)
-        markedDstEl.innerHTML = marked(markSourceEl.value)
+        result = marked(markSourceEl.value)
+        markedDstEl.innerHTML = result
+    })
+
+    saveArticBtn.addEventListener('click', function () {
+        const newArticle = {id: 0, title: articleTitle.value, description: result}
+        console.log(articleTitle.value)
+        const json = localStorage.getItem('articles')
+        const articles = JSON.parse(json)
+        articles.push(newArticle)
+        localStorage.setItem('articles', JSON.stringify(articles))
     })
 
 

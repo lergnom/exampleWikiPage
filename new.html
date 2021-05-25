@@ -24,7 +24,7 @@
             Редактор статьи
         </div>
         <div class="form-group">
-            <input class="form-input" type="text" placeholder="Название статьи">
+            <input class="form-input" type="text" placeholder="Название статьи" id="article-title">
         </div>
 
         <div class="form-group">
@@ -35,7 +35,7 @@
             <textarea class="form-textarea" name="" id="markSrc" cols="30" rows="10"></textarea>
         </div>
 
-        <button class="button-save">Сохранить статью</button>
+        <button class="button-save" id="save-article-button">Сохранить статью</button>
 
     </div>
     <div class="article-preview-col">
@@ -43,7 +43,7 @@
             Предпросмотр статьи
         </div>
         <article class="article-wrapper" id="markDst">
-<!--            <h1>Заголовок статьи</h1>-->
+            <!--            <h1>Заголовок статьи</h1>-->
             <!--            <p>Далеко-далеко за <a href="#">словесными горами в стране</a>, гласных и согласных живут рыбные тексты.-->
             <!--                Использовало однажды гор семь, снова раз. Города большой безорфографичный меня.</p>-->
             <!--            <p>Lorem имени, продолжил своего реторический своих послушавшись грустный даль страну парадигматическая-->
@@ -101,6 +101,8 @@
     });
 
 </script>
+<script src="./js/init.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="./js/new.js"></script>
 

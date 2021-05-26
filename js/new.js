@@ -17,10 +17,10 @@
     })
 
     saveArticBtn.addEventListener('click', function () {
-        const newArticle = {id: 0, title: articleTitle.value, description: result}
         console.log(articleTitle.value)
         const json = localStorage.getItem('articles')
         const articles = JSON.parse(json)
+        const newArticle = {id: articles.length + 1, title: articleTitle.value, description: result}
         articles.push(newArticle)
         localStorage.setItem('articles', JSON.stringify(articles))
     })

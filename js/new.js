@@ -23,6 +23,8 @@
         const newArticle = {id: articles.length + 1, title: articleTitle.value, description: result}
         articles.push(newArticle)
         localStorage.setItem('articles', JSON.stringify(articles))
+        markSourceEl.value = '';
+        articleTitle.value = '';
     })
 
 
